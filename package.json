@@ -1,7 +1,7 @@
 {
   "name": "apigateway-openapi-construct",
   "description": "A construct which discover API route from your Api gateway and generate parts of your openapi documentation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "scripts": {
