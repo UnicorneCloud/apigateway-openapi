@@ -11,8 +11,5 @@ export interface RouteProps {
     apiKeyRequired?: boolean;
     schemaProps?: SchemaProps;
 }
-export declare function generateRoute({ scope, root, lambdaProps, url, method, authorizer, apiKeyRequired, schemaProps, }: RouteProps): {
-    lambda: lambdaNodeJs.NodejsFunction;
-    path: Record<string, Record<string, Record<string, any>>> | undefined;
-};
+export declare function generateRoute({ scope, root, lambdaProps, url, method, authorizer, apiKeyRequired, schemaProps, }: RouteProps): lambdaNodeJs.NodejsFunction;
 export declare const getResourceByUrl: (rootResource: apigateway.IResource, url: string) => apigateway.IResource;
