@@ -65,17 +65,25 @@ const generateOpenApiSpec = (
   let responseSchemaRef: any = schemaProps.responseSchema;
 
   let responseSchema: any;
-  if (schemaProps.responseTypeIsArray) {
+
+  if (!responseSchemaRef) {
     responseSchema = {
-      type: "array",
-      items: {
-        $ref: `#/components/schemas/${responseSchemaRef}`,
-      },
+      type: "object",
+      properties: {},
     };
   } else {
-    responseSchema = {
-      $ref: `#/components/schemas/${responseSchemaRef}`,
-    };
+    if (schemaProps.responseTypeIsArray) {
+      responseSchema = {
+        type: "array",
+        items: {
+          $ref: `#/components/schemas/${responseSchemaRef}`,
+        },
+      };
+    } else {
+      responseSchema = {
+        $ref: `#/components/schemas/${responseSchemaRef}`,
+      };
+    }
   }
 
   const openApiSpec = {
@@ -104,7 +112,7 @@ const generateOpenApiSpec = (
         //     },
         //   ],
         // }),
-        responses: {
+        ...(responseSchema && {
           200: {
             description: "Successful response",
             content: {
@@ -113,7 +121,7 @@ const generateOpenApiSpec = (
               },
             },
           },
-        },
+        }),
       },
     },
   };
