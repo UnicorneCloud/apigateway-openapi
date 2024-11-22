@@ -56,12 +56,7 @@ export function generateRoute({
   addMetadatas(methodResource.node, schemaProps);
 
   // Generate OpenAPI spec
-  let path: Record<string, Record<string, Record<string, any>>> | undefined;
-
-  return {
-    lambda,
-    path,
-  };
+  return lambda;
 }
 
 type Node = {
