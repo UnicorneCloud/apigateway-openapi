@@ -1,12 +1,14 @@
-# Welcome to your CDK TypeScript Construct Library project
+# ApiGateway OpenAPI
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`ApigatewayOpenapiConstruct`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+ApiGateway OpenAPI is a construct for generating OpenAPI documentation.
 
-The construct defines an interface (`ApigatewayOpenapiConstructProps`) to configure the visibility timeout of the queue.
+## Installation
 
-## Useful commands
+- Install dependency `npm install apigateway-openapi`
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
+
+## Inject schemas
+
+We  canoo't automatically discover your schemas, you have to provide in the construct schemas
+
+

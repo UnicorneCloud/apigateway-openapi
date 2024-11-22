@@ -193,7 +193,7 @@ export function generateOpenApiFile(
   };
 
   fs.writeFileSync(
-    path.resolve(__dirname, "../../openapi.json"),
+    path.resolve(process.cwd(), "./openapi.json"),
     JSON.stringify(openApiSpec, null, 2)
   );
 }
